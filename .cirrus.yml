@@ -2,8 +2,8 @@ task:
     name: amsp
     timeout_in: 120m
     container:
-      image: apon77/aosp:latest
+      image: ubuntu:latest
       cpu: 8  
       memory: 32G 
     run_script: # To sync source
-      - ./run
+      - apt update && apt upgrade -y
