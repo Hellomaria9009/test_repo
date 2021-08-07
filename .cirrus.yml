@@ -23,7 +23,7 @@ task:
       - git clone https://github.com/Orangeskai/android_device_realme_RMX2001 -b DotOs --depth=1 device/realme/RMX2001
       - git clone https://github.com/Orangeskai/android_kernel_realme_RMX2001 -b DotOs --depth=1 kernel/realme/RMX2001
       - git clone https://github.com/Orangeskai/proprietary_vendor_realme -b Dotos --depth=1 vendor/realme
-      - git clone https://github.com/Orangeskai/android_device_realme_mt6785-common -b lineage-18.1 --depth=1 device/realme/mt6785-common
+      - git clone https://github.com/Orangeskai/android_device_realme_mt6785-common -b lineage-18.1-plus --depth=1 device/realme/mt6785-common
       - . build/envsetup.sh
       - lunch dot_RMX2001-userdebug
       - make bacon -j$(nproc --all)
