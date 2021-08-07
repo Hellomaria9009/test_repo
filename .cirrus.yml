@@ -8,7 +8,7 @@ task:
     run_script: # To sync source
       - apt update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
       - apt upgrade -y
-      - apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 libncurses5-dev lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig -y
+      - apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 libncurses5-dev lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev python libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig -y
       - mkdir ~/bin
       - PATH=~/bin:$PATH
       - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
@@ -25,5 +25,5 @@ task:
       - source build/envsetup.sh
       - lunch dot_RMX2001-userdebug
       - make bacon -j$(nproc --all)
-      - up out/target/product/RMX2001/*.zip
-      - up(){curl --upload-file $1 https://transfer.sh/$(basename $1); echo}
+      - up=out/target/product/RMX2001/*.zip
+      - curl --upload-file $up https://transfer.sh/$($up); echo
