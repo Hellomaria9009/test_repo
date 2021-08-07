@@ -3,7 +3,7 @@ task:
     timeout_in: 240m
     container:
       image: ubuntu:latest
-      cpu: 12  
+      cpu: 10  
       memory: 32G 
     run_script: # To sync source
       - apt update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
