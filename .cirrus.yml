@@ -15,8 +15,8 @@ task:
       - chmod a+x ~/bin/repo
       - git config --global user.name Your Name
       - git config --global user.email you@example.com
-      - repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11
-      - repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
+      - ~/bin/repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11
+      - ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
       - cd project
       - git clone https://github.com/Orangeskai/android_device_realme_RMX2001 -b DotOs --depth=1 device/realme/RMX2001
       - git clone https://github.com/Orangeskai/android_kernel_realme_RMX2001 -b DotOs --depth=1 kernel/realme/RMX2001
