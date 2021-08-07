@@ -13,11 +13,11 @@ task:
       - PATH=~/bin:$PATH
       - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
       - chmod a+x ~/bin/repo
-      - source /usr/sbin/update-ccache-symlinks
-      - echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
-      - source ~/.bashrc && echo $PATH
       - git config --global user.name Your Name
       - git config --global user.email you@example.com
+      - /usr/sbin/update-ccache-symlinks
+      - echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+      - source ~/.bashrc && echo $PATH
       - ~/bin/repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11
       - ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
       - ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune --force-broken
