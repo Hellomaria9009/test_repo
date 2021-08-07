@@ -4,7 +4,7 @@ task:
     container:
       image: ubuntu:latest
       cpu: 8  
-      memory: 19G 
+      memory: 32G 
     run_script: # To sync source
       - apt update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
       - apt upgrade -y
