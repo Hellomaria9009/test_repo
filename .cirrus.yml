@@ -19,8 +19,7 @@ task:
       - echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
       - source ~/.bashrc && echo $PATH
       - ~/bin/repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11
-      - ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
-      - ~/bin/repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune --force-broken
+      - ~/bin/repo sync -c -j7 --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune --force-broken
       - cd project
       - git clone https://github.com/Orangeskai/android_device_realme_RMX2001 -b DotOs --depth=1 device/realme/RMX2001
       - git clone https://github.com/Orangeskai/android_kernel_realme_RMX2001 -b DotOs --depth=1 kernel/realme/RMX2001
